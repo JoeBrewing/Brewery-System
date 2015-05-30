@@ -1,0 +1,91 @@
+.small_float {
+    float: left;
+    width: 250;
+    height: 200;
+    margin-left: 5px;
+    margin-right: 75px;
+    margin-top: 5px;
+    background-color: #66CC99;
+    color: #C8F7C5;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.medium_float{
+     float: left;
+     width: 450;
+     height: 300;
+     margin: 5px;
+     background-color: #66CC99;
+     color: #C8F7C5;
+     font-family: sans-serif;
+     text-align: center;
+}
+
+.large_float{
+    float: left;
+    width: 700;
+    height: 500;
+    margin: 5px;
+    background-color: #66CC99;
+    color: #C8F7C5;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.result_display{
+    width: 550;
+    height: 20;
+    margin-left: 5px;
+    margin-top: 5px;
+    color: black;
+    background-color: #4183D7;
+}
+
+.display_item{
+    width: 200px;
+    margin-left: 5px;
+}
+
+.input_item{
+    width: 200px;
+    margin: 5px;
+}
+
+.result_table_header{
+    text-align: left;
+    margin-left: 5px;
+}
+
+.scroll-y {
+    width: 600px;
+    height: 400px;
+    overflow: scroll;
+}
+
+.scroll-y-small {
+    width: 600px;
+    height: 300px;
+    overflow: scroll;
+}
+
+.navbar_item {
+    float: left;
+    margin: 10px;
+}
+
+.flatbackground {
+    width: 1000;
+    height: 600;
+    margin: 5px;
+    background-color: #6C7A89;
+    text-align: center;
+    color: #C8F7C5;
+    font-family: sans-serif;
+}
+
+.circle {
+    width: 20%;
+    height: 30%;
+    margin: 5px;
+}

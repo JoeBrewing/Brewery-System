@@ -1,0 +1,65 @@
+<html>
+<head lang="en">
+    <title>Brewery System</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/chartist.min.css">
+</head>
+<body>
+
+<div class="flatbackground">
+    <title_header></title_header>
+    <desktop_main_screen></desktop_main_screen>
+    <desktop_empty_keg_screen></desktop_empty_keg_screen>
+    <desktop_filled_keg_screen></desktop_filled_keg_screen>
+    <desktop_add_keg_screen></desktop_add_keg_screen>
+    <desktop_add_beer_screen></desktop_add_beer_screen>
+    <desktop_add_distributor_screen></desktop_add_distributor_screen>
+</div>
+
+<script src="js/riot+compiler.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/d3pie.min.js"></script>
+<script src="js/chartist.min.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/topojson.js"></script>
+<script src="js/datamaps.usa.min.js"></script>
+<script src="js/DataProvider.js"></script>
+<script src="tags/screens.tag" type="riot/tag"></script>
+<script src="tags/charts.tag" type="riot/tag"></script>
+<script src="tags/maps.tag" type="riot/tag"></script>
+
+<script>
+    var api = riot.observable();
+    api.main_screen = true;
+    api.empty_keg_screen = false;
+    api.filled_keg_screen = false;
+    api.add_keg_screen = false;
+    api.add_beer_screen = false;
+    api.add_distributor_screen = false;
+    api.actions = [];
+    api.beers = [];
+
+    updateAPIValues();
+
+    riot.mount('title_header');
+    riot.mount('desktop_main_screen');
+    riot.mount('desktop_empty_keg_screen');
+    riot.mount('desktop_filled_keg_screen');
+    riot.mount('desktop_add_keg_screen');
+    riot.mount('desktop_add_beer_screen');
+    riot.mount('desktop_add_distributor_screen')
+    riot.update();
+
+    api.on('keg_update', function(){
+        riot.update();
+        updateAPIValues();
+
+        console.log("total-" + api.total);
+        console.log("Update-" + api.kegs.length);
+        riot.update();
+    });
+</script>
+
+</body>
+</html>
