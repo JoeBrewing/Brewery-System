@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Brewery System.iml" filepath="$PROJECT_DIR$/.idea/Brewery System.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/BrewerySystem.iml" filepath="$PROJECT_DIR$/.idea/BrewerySystem.iml" />
+>>>>>>> db44b5dbd969fa37de3d1751fe37b1a62b8ec1b1
     </modules>
   </component>
 </project>
