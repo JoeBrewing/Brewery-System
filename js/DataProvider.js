@@ -1,44 +1,26 @@
 function filterArray(items, key, condition){
-    var arr = [];
-    var index = 0;
-    <!-- add check for undefined -->
-    while (index < items.length){
-        if(items === '') {
-            arr = [];
-            return arr;
-        }
-
-        if(items[index][key] === condition){
-            arr.push(items[index]);
-        }
-        index += 1;
+    if (!items) {
+        return []
     }
 
-    return arr;
+    return items.filter(function(item) {
+        return item[key] === condition
+    }).slice() // shallow copy
 };
 
 function filterActionsByMonth(items, key, condition){
-    var arr = [];
-    arr[0] = 0;
-    arr[1] = 0;
-    arr[2] = 0;
-    arr[3] = 0;
-    arr[4] = 0;
-    arr[5] = 0;
-    var index = 0;
-    while (index < items.length){
-        if(items === '') {
-            arr = [];
-            return arr;
-        }
-
-        if(items[index][key] === condition){
-            var month = Number(items[index]["month"]) - 1;
-            var value = arr[month];
-            arr[month] = Number(value) + 1;
-        }
-        index += 1;
+    if (!items) {
+        return []
     }
+
+    var arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    items.filter(function(item) {
+        item[key] === condition
+    }).forEach(function(item) {
+        var month = Number(item.month) - 1;
+        arr[month] += 1
+    })
 
     return arr;
 }
@@ -183,16 +165,11 @@ function updateAPIValues(){
 }
 
 function getKegsByBreweryId(){
-    if(localStorage.brewery_id === '')
-    {
+    if(!localStorage.brewery_id) {
         localStorage.brewery_id = "BR2015001";
     };
 
-    var kegs = localStorage.kegs === '' ? '' : JSON.parse(localStorage.kegs);
-    if(kegs === '')
-    {
-        kegs = [];
-    };
+    var kegs = localStorage.kegs ? JSON.parse(localStorage.kegs) : [];
 
     return filterArray(kegs, "brewery_id", localStorage.brewery_id);
 };
@@ -234,8 +211,7 @@ function addBeer(name, style, size, cost){
 }
 
 function getActionsByBreweryId() {
-    if(localStorage.actions === '')
-    {
+    if(!localStorage.actions) {
         localStorage.actions = [];
     }
 
@@ -271,17 +247,17 @@ function getTotalEmptyKegs() {
 };
 
 function getNumberOfFilledKegs(){
-    var amount = api.filled === '' ? 0 : api.filled.length;
+    var amount = api.filled ? api.filled.length : 0;
     return amount;
 };
 
 function getNumberOfSanitizedKegs() {
-    var amount = api.sanitized_kegs === '' ? 0 : api.sanitized_kegs.length;
+    var amount = api.sanitized_kegs ? api.sanitized_kegs.length : 0;
     return amount;
 };
 
 function getNumberOfEmptyKegs() {
-    var amount = api.empty_kegs === '' ? 0 : api.empty_kegs.length;
+    var amount = api.empty_kegs ? api.empty_kegs.length : 0;
     return amount;
 };
 
