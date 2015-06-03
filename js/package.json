@@ -1,10 +1,15 @@
 {
   "name": "circles",
   "version": "0.0.6",
+  "main": "./index.js",
   "description": "Lightweight JavaScript library that generates circular graphs in SVG. Now with animation.",
   "repository": {
     "type": "git",
     "url": "git://github.com/lugolabs/circles.git"
+  },
+  "scripts": {
+    "watch": "watchify js/index.js -o js/build.js -d",
+    "build": "browserify js/index.js > js/build.js"
   },
   "keywords": [
     "circles",

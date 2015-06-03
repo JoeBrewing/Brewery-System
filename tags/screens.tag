@@ -1,4 +1,4 @@
-<title_header>
+module.exports = <title_header>
     <div>
         <div if={ !api.main_screen }><i class="fa fa-home fa-lg navbar_item" onclick={goHome}></i></div>
         <div if={ !api.add_keg_screen }><i class="fa fa-plus fa-lg navbar_item" onclick={goAddKeg}></i></div>
