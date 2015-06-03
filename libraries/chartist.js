@@ -14,7 +14,7 @@
   }
 }(this, function () {
 
-/* Chartist.js 0.8.0
+/* Chartist.libraries 0.8.0
  * Copyright © 2015 Gion Kunz
  * Free to use under the WTFPL license.
  * http://www.wtfpl.net/
@@ -1637,7 +1637,7 @@ var Chartist = {
   Chartist.xmlNs = {
     qualifiedName: 'xmlns:ct',
     prefix: 'ct',
-    uri: 'http://gionkunz.github.com/chartist-js/ct'
+    uri: 'http://gionkunz.github.com/chartist-libraries/ct'
   };
 
   /**
@@ -3569,7 +3569,7 @@ var Chartist = {
       startAngle = options.startAngle,
       dataArray = Chartist.getDataArray(this.data, options.reverseData);
 
-    // Create SVG.js draw
+    // Create SVG.libraries draw
     this.svg = Chartist.createSvg(this.container, options.width, options.height, options.classNames.chart);
     // Calculate charting rect
     chartRect = Chartist.createChartRect(this.svg, options, defaultOptions.padding);
@@ -3586,7 +3586,7 @@ var Chartist = {
     radius -= options.donut ? options.donutWidth / 2  : 0;
 
     // If a donut chart then the label position is at the radius, if regular pie chart it's half of the radius
-    // see https://github.com/gionkunz/chartist-js/issues/21
+    // see https://github.com/gionkunz/chartist-libraries/issues/21
     labelRadius = options.donut ? radius : radius / 2;
     // Add the offset to the labelRadius where a negative offset means closed to the center of the chart
     labelRadius += options.labelOffset;

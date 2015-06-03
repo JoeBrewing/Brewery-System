@@ -1,7 +1,7 @@
 /* Riot v2.0.15, @license MIT, (c) 2015 Muut Inc. + contributors */
 
 ;(function(window) {
-  // 'use strict' does not allow us to override the events properties https://github.com/muut/riotjs/blob/dev/lib/tag/update.js#L7-L10
+  // 'use strict' does not allow us to override the events properties https://github.com/muut/riotjs/blob/dev/lib/tag/update.libraries#L7-L10
   // it leads to the following error on firefox "setting a property that has only a getter"
   //'use strict'
 
@@ -314,13 +314,13 @@ var tmpl = (function() {
 
         + '].join(" ").trim()'
 
-      // if js expression, evaluate as javascript
+      // if libraries expression, evaluate as javascript
       : wrap(s, n)
 
   }
 
 
-  // execute js w/o breaking on errors or undefined vars
+  // execute libraries w/o breaking on errors or undefined vars
 
   function wrap(s, nonull) {
     s = s.trim()
@@ -1342,7 +1342,7 @@ riot.mountTo = riot.mount
 
       html = html || ''
 
-      // js wrapped inside <script> tag
+      // libraries wrapped inside <script> tag
       var type = opts.type
 
       if (!js.trim()) {
@@ -1376,7 +1376,7 @@ riot.mountTo = riot.mount
   }
 
 
-  // io.js (node)
+  // io.libraries (node)
   if (!window) {
     this.riot = require(process.env.RIOT || '../riot')
     return module.exports = {

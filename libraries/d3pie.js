@@ -6,7 +6,7 @@
  * @repo http://github.com/benkeen/d3pie
  */
 
-// UMD pattern from https://github.com/umdjs/umd/blob/master/returnExports.js
+// UMD pattern from https://github.com/umdjs/umd/blob/master/returnExports.libraries
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module
@@ -31,7 +31,7 @@
 	// this section includes all helper libs on the d3pie object. They're populated via grunt-template. Note: to keep
 	// the syntax highlighting from getting all messed up, I commented out each line. That REQUIRES each of the files
 	// to have an empty first line. Crumby, yes, but acceptable.
-	//// --------- _default-settings.js -----------/**
+	//// --------- _default-settings.libraries -----------/**
 /**
  * Contains the out-the-box settings for the script. Any of these settings that aren't explicitly overridden for the
  * d3pie instance will inherit from these. This is also included on the main website for use in the generation script.
@@ -185,7 +185,7 @@ var defaultSettings = {
 	}
 };
 
-	//// --------- validate.js -----------
+	//// --------- validate.libraries -----------
 var validate = {
 
 	// called whenever a new pie chart is created
@@ -244,7 +244,7 @@ var validate = {
 	}
 };
 
-	//// --------- helpers.js -----------
+	//// --------- helpers.libraries -----------
 var helpers = {
 
 	// creates the SVG element
@@ -573,7 +573,7 @@ var extend = function() {
 	}
 	return target;
 };
-	//// --------- math.js -----------
+	//// --------- math.libraries -----------
 var math = {
 
 	toRadians: function(degrees) {
@@ -782,7 +782,7 @@ var math = {
 	}
 };
 
-	//// --------- labels.js -----------
+	//// --------- labels.libraries -----------
 var labels = {
 
 	/**
@@ -1281,7 +1281,7 @@ var labels = {
 	}
 };
 
-	//// --------- segments.js -----------
+	//// --------- segments.libraries -----------
 var segments = {
 
 	/**
@@ -1568,7 +1568,7 @@ var segments = {
 
 };
 
-	//// --------- text.js -----------
+	//// --------- text.libraries -----------
 var text = {
 	offscreenCoord: -10000,
 
@@ -1748,7 +1748,7 @@ var text = {
 	}
 };
 
-  //// --------- validate.js -----------
+  //// --------- validate.libraries -----------
 var tt = {
 	addTooltips: function(pie) {
 
